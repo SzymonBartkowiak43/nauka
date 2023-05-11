@@ -5,36 +5,36 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String []args) throws MniejNizZero{
-
-        int ile = 10000000;
-        List<Integer> lista = new ArrayList<>();
-
-        long start = System.currentTimeMillis();
-
-        Thread one = new Thread(() -> {
-        for(int i = 0; i < ile;i++) {
-            lista.add(i);
+    public static void main(String []args) {
+        szukanieLiczby l = new szukanieLiczby();
+        int tab[] = new int[10000];
+        for(int i = 0; i < tab.length-1; i++) {
+            tab[i] = i*2;
         }
-        });
 
-        Thread two = new Thread(() -> {
-            for(int i = 0; i < ile;i++) {
-                lista.add(i);
-            }
-        });
-
-        long end = System.currentTimeMillis();
-        System.out.println("Zajelo to " + end + " " + start);
-
+        System.out.println(l.znajdz(tab,100));
     }
+    public static class szukanieLiczby {
 
-    private static void zlywiek(int wiek) throws MniejNizZero {
-        if(wiek < 1) {
-            throw new MniejNizZero("O nie zjebales za mały wiek", new RuntimeException());
+        public int znajdz (int[] tab, int szukana) {
+            int start = 0;
+            int end = tab.length -1;
+
+            while(start <= end) {
+                int srodek = (start + end) /2;
+                int liczba = tab[srodek];
+
+                if(liczba == szukana) {
+                    return srodek;
+                }
+                if (liczba < szukana) {
+                    start = srodek + 1;
+                }else {
+                    end = srodek -1;
+                }
+            }
+            return -1;
         }
-        else if(wiek > 10) {
-            throw  new MniejNizZero();
-        }
+
     }
 }
