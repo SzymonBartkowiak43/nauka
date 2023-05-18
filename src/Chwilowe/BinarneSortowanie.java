@@ -3,7 +3,7 @@ package Chwilowe;
 import java.util.Arrays;
 
 public class BinarneSortowanie {
-    public static void szukaj(int szukana) {
+    public static int szukaj(int szukana) {
         int poczatek = 0;
         int [] tab = new int[100];
         int koniec = tab.length-1;
@@ -15,22 +15,25 @@ public class BinarneSortowanie {
         int znaleziona = tab[0];
         int srodek;
 
-        while(znaleziona != szukana) {
+        while(poczatek <= koniec) {
             srodek = (koniec+poczatek)/2;
             znaleziona = tab[srodek];
-            if(znaleziona > szukana) {
-                koniec = srodek;
+
+            if(znaleziona == szukana) {
+                System.out.println(srodek + " " + znaleziona);
+                return  0;
             }
-            if(znaleziona < szukana) {
-                poczatek = srodek;
+
+            else if(znaleziona >= szukana && koniec != srodek) {
+                koniec = srodek - 1;
             }
-            else if(poczatek == koniec) {
-                System.out.println("Nie znaleziono ;/");
+            else if(znaleziona <= szukana) {
+                poczatek = srodek +1;
             }
-            else
-                System.out.println(srodek);
 
         }
+        System.out.println("Nie ma");
+        return 0;
 
 
     }

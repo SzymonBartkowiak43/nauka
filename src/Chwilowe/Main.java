@@ -12,11 +12,11 @@ public class Main {
 //            tab[i] = i*2;
 
         BinarneSortowanie.szukaj(20);
-//        BinarneSortowanie.szukaj(29);
-//        BinarneSortowanie.szukaj(0);
-//        BinarneSortowanie.szukaj(198);
-//        BinarneSortowanie.szukaj(200);
-//        BinarneSortowanie.szukaj(12);
+        BinarneSortowanie.szukaj(29);
+        BinarneSortowanie.szukaj(0);
+        BinarneSortowanie.szukaj(198);
+        BinarneSortowanie.szukaj(200);
+       BinarneSortowanie.szukaj(12);
         }
 
 //        System.out.println(l.znajdz(tab,100));
