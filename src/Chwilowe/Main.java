@@ -6,14 +6,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String []args) {
-        szukanieLiczby l = new szukanieLiczby();
-        int tab[] = new int[10000];
-        for(int i = 0; i < tab.length-1; i++) {
-            tab[i] = i*2;
+//        szukanieLiczby l = new szukanieLiczby();
+//        int tab[] = new int[10000];
+//        for(int i = 0; i < tab.length-1; i++) {
+//            tab[i] = i*2;
+
+        BinarneSortowanie.szukaj(20);
+//        BinarneSortowanie.szukaj(29);
+//        BinarneSortowanie.szukaj(0);
+//        BinarneSortowanie.szukaj(198);
+//        BinarneSortowanie.szukaj(200);
+//        BinarneSortowanie.szukaj(12);
         }
 
-        System.out.println(l.znajdz(tab,100));
-    }
+//        System.out.println(l.znajdz(tab,100));
+//    }
     public static class szukanieLiczby {
 
         public int znajdz (int[] tab, int szukana) {
